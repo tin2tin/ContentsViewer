@@ -1,7 +1,7 @@
 # ContentsViewer
 Blender Text Editor: Contents Viewer - List text's classes, definitions and create snippets 
 
-- An updated 2.80 version of Alfonso Serra's Class Viewer:
+An updated 2.80 version of Alfonso Serra's Class Viewer:
 https://sites.google.com/site/aleonserra/home/scripts/class-viewer
 
 Description
