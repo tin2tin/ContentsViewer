@@ -1,0 +1,4 @@
+import bpy
+from bpy.props import *
+print(30*"-")
+

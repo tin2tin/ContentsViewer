@@ -1,0 +1,4 @@
+		for i, l in enumerate(txt.lines):
+			i=i+1
+			line = l.body + "\n"
+			if l == sline or l==endline:

@@ -1,0 +1,4 @@
+class myproperties(bpy.types.PropertyGroup):
+	pass
+
+bpy.utils.register_class(myproperties)

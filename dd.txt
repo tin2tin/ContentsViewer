@@ -1,0 +1,5 @@
+#debug dump variables
+def dd(value):
+	print(30*"-")
+	print(dir(value))
+	print(value)

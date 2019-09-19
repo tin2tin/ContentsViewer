@@ -1,0 +1,39 @@
+class CustomNode(bpy.types.Node, MyCustomTreeNode):
+	'''A custom node'''
+	bl_idname = 'CustomNodeType'
+	bl_label = 'Object Node'
+	bl_icon = 'SOUND'
+
+	objName = StringProperty(name = "Object", default = "")
+	
+	def init(self, context):
+		self.inputs.new('CustomSocketType', "Hello")
+		self.inputs.new('NodeSocketFloat', "World")
+		self.inputs.new('NodeSocketVector', "Location")
+		self.inputs.new('NodeSocketVector', "Rotation")
+		self.inputs.new('NodeSocketVector', "Scale")
+		
+		self.outputs.new('NodeSocketColor', "How")
+		self.outputs.new('NodeSocketColor', "are")
+		self.outputs.new('NodeSocketFloat', "you")
+
+	def copy(self, node):
+		print("Copying from node ", node)
+
+	def free(self):
+		print("Removing node ", self, ", Goodbye!")
+
+	def draw_buttons(self, context, layout):
+		scn = context.scene
+		try:
+			obj = scn.objects[self.myString]
+		except:
+			obj = None
+		
+		layout.label("Node settings")
+		layout.prop_search(self, "objName", scn, "objects", text = "")
+		if obj:
+			layout.label(str(obj.location))
+	#sidebar buttons
+	def draw_buttons_ext(self, context, layout):
+		pass
